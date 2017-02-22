@@ -684,6 +684,13 @@ namespace GPSAgent.Components.Form
         string Latituded;
         string Speed;
         string WatchGPSdata;
+        string Directions;
+        int Altitude;
+        string BateryReading;
+        int GSMSignalReading;
+        string TerminalState;
+        string APN;
+
         List<string> GPSdatas = new List<string>();
           if (countPacketData > 4000)
             {
@@ -739,7 +746,7 @@ namespace GPSAgent.Components.Form
                 }
 
                 oo.insertGPSdata(MSIIdDevice, MSIIdDevice, "NA", "NA", SignalStatus, "NA",
-                    "NA", Longituted, Latituded, Speed, "NA", MSIIdDevice, SimNUM, "NA");
+                    "NA", Longituted, Latituded, Speed, Directions, MSIIdDevice, SimNUM, BateryReading, Altitude, GSMSignalReading, TerminalState, APN);
             }catch (Exception b)
             {
                 listGPS.Clear();

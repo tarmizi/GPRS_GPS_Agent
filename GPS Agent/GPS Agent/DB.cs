@@ -123,7 +123,7 @@ namespace GPSAgent
         public void insertGPSdata(string DeviceID, string IMEI_no, string SignalStatus, string Password, string DataType,
         string PacketNumber, string GSMBaseSt, string Longitude, string Latitude, string Speed, string Direction,
         string TrackID,
-        string GPSSimNumber, string BatteryReading)
+        string GPSSimNumber, string BatteryReading,int Altitude,int GSMSignalReading,string TerminalState,string APN)
         {
             FormDB con=new FormDB();
            // double y = Convert.ToDouble(Latitude);
@@ -176,6 +176,12 @@ namespace GPSAgent
                         _SQLCommand.Parameters.AddWithValue("@TrackID", TrackID);
                         _SQLCommand.Parameters.AddWithValue("@GPSSimNumber", GPSSimNumber);
                         _SQLCommand.Parameters.AddWithValue("@BatteryReading", BatteryReading);
+
+
+                        _SQLCommand.Parameters.AddWithValue("@Altitude", Altitude);
+                        _SQLCommand.Parameters.AddWithValue("@GSMSignalReading", GSMSignalReading);
+                        _SQLCommand.Parameters.AddWithValue("@TerminalState", TerminalState);
+                        _SQLCommand.Parameters.AddWithValue("@APN", APN);
                         _DBConnection.Open();
                         _SQLCommand.ExecuteNonQuery();
 
