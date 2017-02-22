@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A10F0A83-333E-48CB-90C1-4B4BF16A31E4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GPSAgent</RootNamespace>
+    <AssemblyName>GPS Agent</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\GPS_TACKING_PROJECT\GPS Agent\installer\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>ian Mizi Technology Solution-GPS Agent</ProductName>
+    <PublisherName>ian Mizi Technology Solution</PublisherName>
+    <SuiteName>ian Mizi Technology Solution -GPS Agent</SuiteName>
+    <ApplicationRevision>58</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Binary\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Binary\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E4BB8179545C790E41ACB92627A34964374BC02E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GPS Agent_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>GPSAgent.Components.Form.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\Form\FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormAccountMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormAccountMain.Designer.cs">
+      <DependentUpon>FormAccountMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormAddNewResponderAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormAddNewResponderAlert.Designer.cs">
+      <DependentUpon>FormAddNewResponderAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormAddNewTrackingItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormAddNewTrackingItem.Designer.cs">
+      <DependentUpon>FormAddNewTrackingItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormAdminInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormAdminInfo.Designer.cs">
+      <DependentUpon>FormAdminInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormAutoFenceTimer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormAutoFenceTimer.Designer.cs">
+      <DependentUpon>FormAutoFenceTimer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormDB.Designer.cs">
+      <DependentUpon>FormDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormDevice.Designer.cs">
+      <DependentUpon>FormDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormDialogBox.Designer.cs">
+      <DependentUpon>FormDialogBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormEdit.Designer.cs">
+      <DependentUpon>FormEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormGPSDevices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormGPSDevices.Designer.cs">
+      <DependentUpon>FormGPSDevices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormGPSTrackerDeviceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormGPSTrackerDeviceList.Designer.cs">
+      <DependentUpon>FormGPSTrackerDeviceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormLoginAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormLoginAdmin.Designer.cs">
+      <DependentUpon>FormLoginAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormReceiver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormReceiver.Designer.cs">
+      <DependentUpon>FormReceiver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormSetSMSpathprogram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormSetSMSpathprogram.Designer.cs">
+      <DependentUpon>FormSetSMSpathprogram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormSetUrlGeofenceMonitoring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormSetUrlGeofenceMonitoring.Designer.cs">
+      <DependentUpon>FormSetUrlGeofenceMonitoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormUser.Designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Form\FormUserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Form\FormUserList.Designer.cs">
+      <DependentUpon>FormUserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AppConfig.cs" />
+    <Compile Include="Data\GPSTracker.cs" />
+    <Compile Include="Data\GPSTrackers.cs" />
+    <Compile Include="DB.cs" />
+    <Compile Include="DB_9D78AD_trackingDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_9D78AD_trackingDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GPS\Device\Coban\TK102B.cs" />
+    <Compile Include="GPS\Device\UnknownCompany\TK333.cs" />
+    <Compile Include="GPS\DeviceModel.cs" />
+    <Compile Include="GPS\IGPSData.cs" />
+    <Compile Include="GPS\NMEA\GPRMC.cs" />
+    <Compile Include="GPS\TrackerData.cs" />
+    <Compile Include="GPS\Device\Xexun\TK102.cs" />
+    <Compile Include="Extensions\StringX.cs" />
+    <Compile Include="Net\DataBaseDB.cs" />
+    <Compile Include="Net\Server.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Hash\Crc16.cs" />
+    <EmbeddedResource Include="Components\Form\FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormAccountMain.resx">
+      <DependentUpon>FormAccountMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormAddNewResponderAlert.resx">
+      <DependentUpon>FormAddNewResponderAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormAddNewTrackingItem.resx">
+      <DependentUpon>FormAddNewTrackingItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormAdminInfo.resx">
+      <DependentUpon>FormAdminInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormAutoFenceTimer.resx">
+      <DependentUpon>FormAutoFenceTimer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormDB.resx">
+      <DependentUpon>FormDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormDevice.resx">
+      <DependentUpon>FormDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormDialogBox.resx">
+      <DependentUpon>FormDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormEdit.resx">
+      <DependentUpon>FormEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormGPSDevices.resx">
+      <DependentUpon>FormGPSDevices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormGPSTrackerDeviceList.resx">
+      <DependentUpon>FormGPSTrackerDeviceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormLoginAdmin.resx">
+      <DependentUpon>FormLoginAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormReceiver.resx">
+      <DependentUpon>FormReceiver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormSetSMSpathprogram.resx">
+      <DependentUpon>FormSetSMSpathprogram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormSetUrlGeofenceMonitoring.resx">
+      <DependentUpon>FormSetUrlGeofenceMonitoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Form\FormUserList.resx">
+      <DependentUpon>FormUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="DB_9D78AD_trackingDBDataSet.xsc">
+      <DependentUpon>DB_9D78AD_trackingDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DB_9D78AD_trackingDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_9D78AD_trackingDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_9D78AD_trackingDBDataSet.xss">
+      <DependentUpon>DB_9D78AD_trackingDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recover.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

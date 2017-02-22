@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <section name="AppConfig" type="GPSAgent.Data.AppConfig, GPS Agent" />
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="GPSAgent.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <connectionStrings>
+        <add name="GPSAgent.Properties.Settings.DB_9D78AD_trackingDBConnectionString"
+            connectionString="Data Source=ASUS\SQLEXPRESS;Initial Catalog=DB_9D78AD_trackingDB;User ID=DB_9D78AD_trackingDB_admin;Password=masruna7216393"
+            providerName="System.Data.SqlClient" />
+        <add name="GPSAgent.Properties.Settings.DB_9D78AD_trackingDBConnectionString1"
+            connectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\DB_9D78AD_trackingDB.mdf;Integrated Security=True"
+            providerName="System.Data.SqlClient" />
+    </connectionStrings>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+    </startup>
+    <userSettings>
+        <GPSAgent.Properties.Settings>
+            <setting name="Server" serializeAs="String">
+                <value>SQL5014.Smarterasp.net</value>
+            </setting>
+            <setting name="DB" serializeAs="String">
+                <value>DB_9B86C3_trackingDB</value>
+            </setting>
+            <setting name="Usr" serializeAs="String">
+                <value>DB_9B86C3_trackingDB_admin</value>
+            </setting>
+            <setting name="Pwd" serializeAs="String">
+                <value>masruna7216393</value>
+            </setting>
+            <setting name="UserN" serializeAs="String">
+                <value>mizi</value>
+            </setting>
+            <setting name="PwdN" serializeAs="String">
+                <value>mizi</value>
+            </setting>
+            <setting name="SetUrl" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="RefreshUrl" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="SMSpathprogram" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="UN1" serializeAs="String">
+                <value>Norhan</value>
+            </setting>
+            <setting name="PWD1" serializeAs="String">
+                <value>Norhan123</value>
+            </setting>
+            <setting name="UN2" serializeAs="String">
+                <value>Firdaus</value>
+            </setting>
+            <setting name="PWD2" serializeAs="String">
+                <value>Firdaus123</value>
+            </setting>
+        </GPSAgent.Properties.Settings>
+    </userSettings>
+</configuration>

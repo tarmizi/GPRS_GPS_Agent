@@ -1,0 +1,8 @@
+http://en.wikipedia.org/wiki/NMEA_0183
+http://aprs.gids.nl/nmea/#rmc
+http://www.gpsinformation.org/dale/nmea.htm#RMC
+https://msdn.microsoft.com/en-us/library/system.device.location.geocoordinate%28v=vs.110%29.aspx
+
+
+Test
+http://rl.se/gprmc

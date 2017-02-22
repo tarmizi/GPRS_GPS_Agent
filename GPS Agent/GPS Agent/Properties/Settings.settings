@@ -1,0 +1,61 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GPSAgent.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Server" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SQL5014.Smarterasp.net</Value>
+    </Setting>
+    <Setting Name="DB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DB_9B86C3_trackingDB</Value>
+    </Setting>
+    <Setting Name="Usr" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DB_9B86C3_trackingDB_admin</Value>
+    </Setting>
+    <Setting Name="Pwd" Type="System.String" Scope="User">
+      <Value Profile="(Default)">masruna7216393</Value>
+    </Setting>
+    <Setting Name="UserN" Type="System.String" Scope="User">
+      <Value Profile="(Default)">mizi</Value>
+    </Setting>
+    <Setting Name="PwdN" Type="System.String" Scope="User">
+      <Value Profile="(Default)">mizi</Value>
+    </Setting>
+    <Setting Name="DB_9D78AD_trackingDBConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ASUS\SQLEXPRESS;Initial Catalog=DB_9D78AD_trackingDB;User ID=DB_9D78AD_trackingDB_admin;Password=masruna7216393&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ASUS\SQLEXPRESS;Initial Catalog=DB_9D78AD_trackingDB;User ID=DB_9D78AD_trackingDB_admin;Password=masruna7216393</Value>
+    </Setting>
+    <Setting Name="DB_9D78AD_trackingDBConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\DB_9D78AD_trackingDB.mdf;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\DB_9D78AD_trackingDB.mdf;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="SetUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RefreshUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SMSpathprogram" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UN1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Norhan</Value>
+    </Setting>
+    <Setting Name="PWD1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Norhan123</Value>
+    </Setting>
+    <Setting Name="UN2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Firdaus</Value>
+    </Setting>
+    <Setting Name="PWD2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Firdaus123</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
