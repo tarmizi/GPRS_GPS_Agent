@@ -123,7 +123,7 @@ namespace GPSAgent
         public void insertGPSdata(string DeviceID, string IMEI_no, string SignalStatus, string Password, string DataType,
         string PacketNumber, string GSMBaseSt, string Longitude, string Latitude, string Speed, string Direction,
         string TrackID,
-        string GPSSimNumber, string BatteryReading,int Altitude,int GSMSignalReading,string TerminalState,string APN)
+        string GPSSimNumber, string BatteryReading,string Altitude,string GSMSignalReading,string TerminalState,string APN)
         {
             FormDB con=new FormDB();
            // double y = Convert.ToDouble(Latitude);

@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\GPS_TACKING_PROJECT\GPS Agent\installer\</PublishUrl>
+    <PublishUrl>D:\SSC_PROJECT_BUILD\GPRS_GPS_Agent\GPSAgent\GPS Agent\installer\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <ProductName>ian Mizi Technology Solution-GPS Agent</ProductName>
     <PublisherName>ian Mizi Technology Solution</PublisherName>
     <SuiteName>ian Mizi Technology Solution -GPS Agent</SuiteName>
-    <ApplicationRevision>58</ApplicationRevision>
+    <ApplicationRevision>59</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

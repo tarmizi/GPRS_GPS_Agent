@@ -29,91 +29,31 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.listBoxGpsData = new System.Windows.Forms.ListBox();
             this.controlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startListenerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gPSTrackerDeviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listBoxGPSTraffic = new System.Windows.Forms.ListBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelDeviceCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxWorklistServerIPPort = new System.Windows.Forms.TextBox();
+            this.buttonStartServer = new System.Windows.Forms.Button();
+            this.buttonStartListerning = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
             this.controlToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1025, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(210, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gPSTrackerDeviceToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Red;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 24);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1025, 33);
-            this.panel2.TabIndex = 11;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(954, 7);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 15);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Log:Mizi";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "GPRS Traffic Signal - Injap Software Sdn Bhd";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 460);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1025, 33);
-            this.panel1.TabIndex = 12;
-            // 
-            // listBoxGpsData
-            // 
-            this.listBoxGpsData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxGpsData.FormattingEnabled = true;
-            this.listBoxGpsData.Location = new System.Drawing.Point(0, 57);
-            this.listBoxGpsData.Name = "listBoxGpsData";
-            this.listBoxGpsData.Size = new System.Drawing.Size(1025, 403);
-            this.listBoxGpsData.TabIndex = 13;
+            this.menuStrip1.Visible = false;
             // 
             // controlToolStripMenuItem
             // 
@@ -126,33 +66,109 @@
             // startListenerToolStripMenuItem
             // 
             this.startListenerToolStripMenuItem.Name = "startListenerToolStripMenuItem";
-            this.startListenerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.startListenerToolStripMenuItem.Text = "Start Listener";
+            this.startListenerToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.startListenerToolStripMenuItem.Text = "Start Server";
             this.startListenerToolStripMenuItem.Click += new System.EventHandler(this.startListenerToolStripMenuItem_Click);
             // 
-            // gPSTrackerDeviceToolStripMenuItem
+            // listBoxGPSTraffic
             // 
-            this.gPSTrackerDeviceToolStripMenuItem.Name = "gPSTrackerDeviceToolStripMenuItem";
-            this.gPSTrackerDeviceToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.gPSTrackerDeviceToolStripMenuItem.Text = "GPS tracker device";
-            this.gPSTrackerDeviceToolStripMenuItem.Click += new System.EventHandler(this.gPSTrackerDeviceToolStripMenuItem_Click);
+            this.listBoxGPSTraffic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxGPSTraffic.BackColor = System.Drawing.Color.Black;
+            this.listBoxGPSTraffic.ForeColor = System.Drawing.Color.White;
+            this.listBoxGPSTraffic.FormattingEnabled = true;
+            this.listBoxGPSTraffic.Location = new System.Drawing.Point(0, 94);
+            this.listBoxGPSTraffic.Name = "listBoxGPSTraffic";
+            this.listBoxGPSTraffic.Size = new System.Drawing.Size(1032, 550);
+            this.listBoxGPSTraffic.TabIndex = 13;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel,
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabelDeviceCount});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 642);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1032, 22);
+            this.statusStrip1.TabIndex = 14;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel.Text = "toolStripStatusLabel1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(94, 17);
+            this.toolStripStatusLabel1.Text = "Device Counted:";
+            // 
+            // toolStripStatusLabelDeviceCount
+            // 
+            this.toolStripStatusLabelDeviceCount.Name = "toolStripStatusLabelDeviceCount";
+            this.toolStripStatusLabelDeviceCount.Size = new System.Drawing.Size(13, 17);
+            this.toolStripStatusLabelDeviceCount.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Port";
+            // 
+            // textBoxWorklistServerIPPort
+            // 
+            this.textBoxWorklistServerIPPort.Location = new System.Drawing.Point(49, 12);
+            this.textBoxWorklistServerIPPort.Name = "textBoxWorklistServerIPPort";
+            this.textBoxWorklistServerIPPort.Size = new System.Drawing.Size(149, 20);
+            this.textBoxWorklistServerIPPort.TabIndex = 15;
+            this.textBoxWorklistServerIPPort.Text = "5501";
+            // 
+            // buttonStartServer
+            // 
+            this.buttonStartServer.Location = new System.Drawing.Point(49, 38);
+            this.buttonStartServer.Name = "buttonStartServer";
+            this.buttonStartServer.Size = new System.Drawing.Size(149, 22);
+            this.buttonStartServer.TabIndex = 17;
+            this.buttonStartServer.Text = "Start Server";
+            this.buttonStartServer.UseVisualStyleBackColor = true;
+            this.buttonStartServer.Click += new System.EventHandler(this.buttonStartServer_Click);
+            // 
+            // buttonStartListerning
+            // 
+            this.buttonStartListerning.Location = new System.Drawing.Point(49, 66);
+            this.buttonStartListerning.Name = "buttonStartListerning";
+            this.buttonStartListerning.Size = new System.Drawing.Size(149, 25);
+            this.buttonStartListerning.TabIndex = 18;
+            this.buttonStartListerning.Text = "Start Listerning";
+            this.buttonStartListerning.UseVisualStyleBackColor = true;
+            this.buttonStartListerning.Click += new System.EventHandler(this.buttonStartListerning_Click);
             // 
             // FormReceiver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 493);
-            this.Controls.Add(this.listBoxGpsData);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1032, 664);
+            this.Controls.Add(this.buttonStartListerning);
+            this.Controls.Add(this.buttonStartServer);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxWorklistServerIPPort);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.listBoxGPSTraffic);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormReceiver";
-            this.Text = "FormReceiver";
+            this.Text = "GPS/GPRS Receiver";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,14 +177,16 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem controlToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startListenerToolStripMenuItem;
-        public System.Windows.Forms.ListBox listBoxGpsData;
-        private System.Windows.Forms.ToolStripMenuItem gPSTrackerDeviceToolStripMenuItem;
+        public System.Windows.Forms.ListBox listBoxGPSTraffic;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxWorklistServerIPPort;
+        private System.Windows.Forms.Button buttonStartServer;
+        private System.Windows.Forms.Button buttonStartListerning;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelDeviceCount;
     }
 }

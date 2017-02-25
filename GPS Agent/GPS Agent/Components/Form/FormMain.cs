@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.VisualBasic;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 //using System.Collections;
 
 namespace GPSAgent.Components.Form
@@ -242,6 +243,7 @@ namespace GPSAgent.Components.Form
         List<string> listGPS = new List<string>();
         List<string> listofImeiNo = new List<string>();
         int i = 0;
+        int APNi = 0;
         //int packetcounted = 0;
         //int countLitsGPS = 0;
         private void Server_OnMessageReceived(string szMessage, GPSTracker oGPSTracker, EndPoint oEndPoint)
@@ -450,7 +452,7 @@ namespace GPSAgent.Components.Form
         private void button1_Click(object sender, EventArgs e)
         {
             // oo.insertGPSdata("NA", "NA", "NA", "none", "NA", "none", "GPRS mode", "NA", "NA", "NA", "NA", "WTP2681j", "+601110976958", "NA");
-            oo.insertGPSdata("NA", "NA", "NA", "none", "NA", "none", "GPRS mode", "10142.5559", "0305.9742", Speed, Direction, "WTP2687", "+601110976958", "NA");
+         //   oo.insertGPSdata("NA", "NA", "NA", "none", "NA", "none", "GPRS mode", "10142.5559", "0305.9742", Speed, Direction, "WTP2687", "+601110976958", "NA");
 
         }
 
@@ -472,27 +474,30 @@ namespace GPSAgent.Components.Form
 
         private void commadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.CtrlDeviceList.SelectedIndex = 1;
-            GPSTracker oSelected = this.CtrlDeviceList.SelectedItem as GPSTracker;
-            using (FormEdit f = new FormEdit(oSelected))
-            {
-                if (f.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
-                {
-                    oSelected.ServerPort = f.GPSTracker.ServerPort;
+            //this.CtrlDeviceList.SelectedIndex = 1;
+            //GPSTracker oSelected = this.CtrlDeviceList.SelectedItem as GPSTracker;
+            //using (FormEdit f = new FormEdit(oSelected))
+            //{
+            //    if (f.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+            //    {
+            //        oSelected.ServerPort = f.GPSTracker.ServerPort;
 
-                    AppConfig oAppConfig = AppConfig.Get();
-                    foreach (GPSTracker o in oAppConfig.GPSTrackers)
-                    {
-                        if (o.Equals(f.GPSTracker))
-                        {
-                            o.ServerPort = f.GPSTracker.ServerPort;
-                            o.ServerMaxConnections = f.GPSTracker.ServerMaxConnections;
-                            break;
-                        }
-                    }
-                    AppConfig.Save(oAppConfig);
-                }
-            }
+            //        AppConfig oAppConfig = AppConfig.Get();
+            //        foreach (GPSTracker o in oAppConfig.GPSTrackers)
+            //        {
+            //            if (o.Equals(f.GPSTracker))
+            //            {
+            //                o.ServerPort = f.GPSTracker.ServerPort;
+            //                o.ServerMaxConnections = f.GPSTracker.ServerMaxConnections;
+            //                break;
+            //            }
+            //        }
+            //        AppConfig.Save(oAppConfig);
+            //    }
+            //}
+
+            FormReceiver fr = new FormReceiver();
+            fr.Show();
         }
 
         private void CtrlClientsText_Click(object sender, EventArgs e)
@@ -507,10 +512,9 @@ namespace GPSAgent.Components.Form
 
         private void trafficToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FormReceiver mnl = new FormReceiver();
-            // mnl.Show();
-            listBoxGPSpacket.Items.Clear();
-            GeofenceIDlist.Clear();
+          
+            //////////listBoxGPSpacket.Items.Clear();
+            //////////GeofenceIDlist.Clear();
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -676,7 +680,7 @@ namespace GPSAgent.Components.Form
 
         # region GPSdataExtractor(MSI project)
      //   [SG*8800000015*0087*UD,220414,134652,A,22.571707,N,113.8613968,E,0.1,0.0,100,7,60,90,1000,50,0000,4,1,460,0,9360,4082,131,9360,4092,148,9360,4091,143,9360,4153,141]
-    private void MSIproject(string data)
+    public void MSIproject(string data)
         {
             string MSIIdDevice;
         string SignalStatus;
@@ -692,6 +696,16 @@ namespace GPSAgent.Components.Form
         string APN;
 
         List<string> GPSdatas = new List<string>();
+
+
+        if (data.Contains("LK"))
+        {
+            this.LogAddInfo("Time IN:" + DateTime.Now.ToLongDateString() + "," + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString() + " | Message received Raw Data " + data);
+            return;
+        }
+
+
+
           if (countPacketData > 4000)
             {
                 countPacketData = 0;
@@ -706,6 +720,8 @@ namespace GPSAgent.Components.Form
             //   this.LogAddInfo("Time IN:" + DateTime.Now.ToLongDateString() + "," + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString() + " | Message received Raw Data " + data);
 
             listGPS.Add(WatchGPSdata);
+
+
             this.LogAddInfo("Time IN:" + DateTime.Now.ToLongDateString() + "," + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString() + " | Message received Raw Data " + data);
             try
             {
@@ -728,6 +744,39 @@ namespace GPSAgent.Components.Form
                 Latituded = GPSdatas[7].ToString();
                 Longituted = GPSdatas[9].ToString();
                 Speed = GPSdatas[11].ToString();
+                Directions = GPSdatas[12].ToString();
+                Altitude = Convert.ToInt32(GPSdatas[13].ToString());
+                GSMSignalReading = Convert.ToInt32(GPSdatas[15].ToString());
+                BateryReading = GPSdatas[16].ToString();
+                TerminalState = GPSdatas[19].ToString();
+              
+
+
+
+
+                Regex MyRegex = new Regex("[^a-z@,:_]", RegexOptions.IgnoreCase);              
+                string APNData = MyRegex.Replace(data + "_{ (7 438 ?. !`", @"");
+                string WPSApn = "";
+
+
+
+                string[] APNChunks = APNData.Split(',');
+                foreach (string DetectedAPN in APNChunks)
+                {
+
+                    //    GPSdatas.Add(dtGPS);
+                    if (!DetectedAPN.Contains(":") && DetectedAPN.Length > 1 && !DetectedAPN.Contains("UD"))
+                    {
+                        // MessageBox.Show(" Count: " + APNi.ToString() + "   Split Data :" + DetectedAPN);
+                        WPSApn += DetectedAPN + ',';
+                    }
+
+                    APNi = APNi + 1;
+                }
+
+                APNi = 0;
+
+                WPSApn = WPSApn.Remove(WPSApn.Length - 1);
 
                 if (MSIIdDevice != holdimei)
                 {
@@ -745,8 +794,8 @@ namespace GPSAgent.Components.Form
 
                 }
 
-                oo.insertGPSdata(MSIIdDevice, MSIIdDevice, "NA", "NA", SignalStatus, "NA",
-                    "NA", Longituted, Latituded, Speed, Directions, MSIIdDevice, SimNUM, BateryReading, Altitude, GSMSignalReading, TerminalState, APN);
+                //oo.insertGPSdata(MSIIdDevice, MSIIdDevice, "NA", "NA", SignalStatus, "NA",
+                //    "NA", Longituted, Latituded, Speed, Directions, MSIIdDevice, SimNUM, BateryReading, Altitude, GSMSignalReading, TerminalState, WPSApn);
             }catch (Exception b)
             {
                 listGPS.Clear();
@@ -847,7 +896,7 @@ namespace GPSAgent.Components.Form
 
                 }
 
-                oo.insertGPSdata(AngkasaImeiNo, AngkasaImeiNo, AngkasaGSMbaseStation, AngkasaPassword, AngkasaStatus, AngkasaPacketNumber, AngkasaGSMbaseStation, AngkasaLongitude, AngkasaLatitude, AngkasaSpeed, AngkasaDirection, TracKiD, SimNUM, "NA");
+           //     oo.insertGPSdata(AngkasaImeiNo, AngkasaImeiNo, AngkasaGSMbaseStation, AngkasaPassword, AngkasaStatus, AngkasaPacketNumber, AngkasaGSMbaseStation, AngkasaLongitude, AngkasaLatitude, AngkasaSpeed, AngkasaDirection, TracKiD, SimNUM, "NA");
 
                 //if (TracKiD.Length > 1)
                 //{
@@ -884,7 +933,7 @@ namespace GPSAgent.Components.Form
         }
 
 
-        private void GPSTrackerCobanFamily(string data)
+        public void GPSTrackerCobanFamily(string data)
         {
 
 
