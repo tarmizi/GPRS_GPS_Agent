@@ -646,7 +646,7 @@ namespace GPSAgent
 
         public bool insertUpdateTrackingItem(string AccountNo, string TrackID,
             string DeviceID, string TrackItem, string GPSModel, string CreatedBy,
-            string ModifiedBy, string Status, string Sex, string Risk,string Age,int ID)
+            string ModifiedBy, string Status, string Sex, string Risk, string Age, int ID, string Interval)
         {
             bool val = false;
             FormDB con = new FormDB();
@@ -681,7 +681,7 @@ namespace GPSAgent
                         _SQLCommand.Parameters.AddWithValue("@Sex", Sex);
                         _SQLCommand.Parameters.AddWithValue("@Risk", Risk);
                         _SQLCommand.Parameters.AddWithValue("@Age", Age);
-
+                        _SQLCommand.Parameters.AddWithValue("@Interval", Interval);
 
                         _DBConnection.Open();
                         _SQLCommand.ExecuteNonQuery();

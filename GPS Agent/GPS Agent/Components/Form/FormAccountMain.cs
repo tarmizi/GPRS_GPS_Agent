@@ -315,14 +315,15 @@ namespace GPSAgent.Components.Form
         {
           //  FormAddNewTrackingItem ad = new FormAddNewTrackingItem();
             var dataIndexNo = TrackingItemUnderThisAccountDataGridView.Rows[e.RowIndex].Index.ToString();
-            string cellValue = TrackingItemUnderThisAccountDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-            loadTrackingItemByTrackID(cellValue);
+            string cellValue = TrackingItemUnderThisAccountDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            int ID = Convert.ToInt32(cellValue);
+            loadTrackingItemByTrackID(ID);
            
         }
-        public void loadTrackingItemByTrackID(string TrackID)
+        public void loadTrackingItemByTrackID(int ID)
         {
 
-           // MessageBox.Show(TrackID);
+          
             FormDB con = new FormDB();
             FormAddNewTrackingItem ad = new FormAddNewTrackingItem();
             connstring = con.connectstring();
@@ -338,7 +339,7 @@ namespace GPSAgent.Components.Form
                     {
                         _SQLCommand.Connection = _DBConnection;
                         _SQLCommand.CommandText = "Get_TrackingItemByTrackId";
-                        _SQLCommand.Parameters.AddWithValue("@TrackID", TrackID);
+                        _SQLCommand.Parameters.AddWithValue("@ID", ID);
                         _DBConnection.Open();
                         SqlDataReader result = _SQLCommand.ExecuteReader();
 
@@ -355,7 +356,7 @@ namespace GPSAgent.Components.Form
                             ad.trackItemTextBox.Text = result.GetString(0).ToString();
 
                             ad.gPSModelTextBox.Text = result.GetString(6).ToString();
-
+                            ad.textBoxInterval.Text = result.GetString(20).ToString();
                             ad.sexTextBox.Text = result.GetString(16).ToString();
 
                             ad.riskTextBox.Text = result.GetString(17).ToString();

@@ -95,10 +95,10 @@ namespace GPSAgent.Components.Form
 
 
                 int ID = Convert.ToInt32(textBoxTrackItemID.Text="0");
-
+              
                 bool val = oo.insertUpdateTrackingItem(accountNoTextBox1.Text, trackIDTextBox.Text,
            deviceIDTextBox.Text, trackItemTextBox.Text, gPSModelTextBox.Text, log,
-            log, textBoxStatus.Text, sexTextBox.Text, riskTextBox.Text, ageTextBox.Text, ID);
+            log, textBoxStatus.Text, sexTextBox.Text, riskTextBox.Text, ageTextBox.Text, ID, trackIDTextBox.Text);
                 if (val == true)
                 {
                     MessageBox.Show("save success!!");
@@ -219,10 +219,10 @@ namespace GPSAgent.Components.Form
 
 
                 int ID = Convert.ToInt32(textBoxTrackItemID.Text);
-
+              
                 bool val = oo.insertUpdateTrackingItem(accountNoTextBox1.Text, trackIDTextBox.Text,
            deviceIDTextBox.Text, trackItemTextBox.Text, gPSModelTextBox.Text, log,
-            log, textBoxStatus.Text, sexTextBox.Text, riskTextBox.Text, ageTextBox.Text, ID);
+            log, textBoxStatus.Text, sexTextBox.Text, riskTextBox.Text, ageTextBox.Text, ID, textBoxInterval.Text);
                 if (val == true)
                 {
                     MessageBox.Show("save success!!");

@@ -37,7 +37,9 @@
             System.Windows.Forms.Label riskLabel;
             System.Windows.Forms.Label ageLabel;
             System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label label2;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonGPSDeviceList = new System.Windows.Forms.Button();
             this.buttonEditTrackingItem = new System.Windows.Forms.Button();
             this.checkBoxEditDeviceID = new System.Windows.Forms.CheckBox();
             this.checkBoxEditTrackID = new System.Windows.Forms.CheckBox();
@@ -54,7 +56,7 @@
             this.sexTextBox = new System.Windows.Forms.TextBox();
             this.riskTextBox = new System.Windows.Forms.TextBox();
             this.ageTextBox = new System.Windows.Forms.TextBox();
-            this.buttonGPSDeviceList = new System.Windows.Forms.Button();
+            this.textBoxInterval = new System.Windows.Forms.TextBox();
             accountNoLabel1 = new System.Windows.Forms.Label();
             trackIDLabel = new System.Windows.Forms.Label();
             deviceIDLabel = new System.Windows.Forms.Label();
@@ -64,6 +66,7 @@
             riskLabel = new System.Windows.Forms.Label();
             ageLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,6 +153,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(label2);
+            this.groupBox1.Controls.Add(this.textBoxInterval);
             this.groupBox1.Controls.Add(this.buttonGPSDeviceList);
             this.groupBox1.Controls.Add(this.buttonEditTrackingItem);
             this.groupBox1.Controls.Add(this.checkBoxEditDeviceID);
@@ -182,6 +187,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add/Edit Tracking Item";
+            // 
+            // buttonGPSDeviceList
+            // 
+            this.buttonGPSDeviceList.Location = new System.Drawing.Point(289, 120);
+            this.buttonGPSDeviceList.Name = "buttonGPSDeviceList";
+            this.buttonGPSDeviceList.Size = new System.Drawing.Size(29, 23);
+            this.buttonGPSDeviceList.TabIndex = 69;
+            this.buttonGPSDeviceList.Text = ".....";
+            this.buttonGPSDeviceList.UseVisualStyleBackColor = true;
+            this.buttonGPSDeviceList.Click += new System.EventHandler(this.buttonGPSDeviceList_Click);
             // 
             // buttonEditTrackingItem
             // 
@@ -319,15 +334,22 @@
             this.ageTextBox.Size = new System.Drawing.Size(162, 20);
             this.ageTextBox.TabIndex = 59;
             // 
-            // buttonGPSDeviceList
+            // label2
             // 
-            this.buttonGPSDeviceList.Location = new System.Drawing.Point(289, 120);
-            this.buttonGPSDeviceList.Name = "buttonGPSDeviceList";
-            this.buttonGPSDeviceList.Size = new System.Drawing.Size(29, 23);
-            this.buttonGPSDeviceList.TabIndex = 69;
-            this.buttonGPSDeviceList.Text = ".....";
-            this.buttonGPSDeviceList.UseVisualStyleBackColor = true;
-            this.buttonGPSDeviceList.Click += new System.EventHandler(this.buttonGPSDeviceList_Click);
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(30, 178);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(45, 13);
+            label2.TabIndex = 70;
+            label2.Text = "Interval:";
+            // 
+            // textBoxInterval
+            // 
+            this.textBoxInterval.Location = new System.Drawing.Point(125, 175);
+            this.textBoxInterval.Name = "textBoxInterval";
+            this.textBoxInterval.Size = new System.Drawing.Size(162, 20);
+            this.textBoxInterval.TabIndex = 71;
+            this.textBoxInterval.Text = "0";
             // 
             // FormAddNewTrackingItem
             // 
@@ -366,5 +388,6 @@
         public System.Windows.Forms.CheckBox checkBoxEditDeviceID;
         public System.Windows.Forms.CheckBox checkBoxEditTrackID;
         private System.Windows.Forms.Button buttonGPSDeviceList;
+        public System.Windows.Forms.TextBox textBoxInterval;
     }
 }
