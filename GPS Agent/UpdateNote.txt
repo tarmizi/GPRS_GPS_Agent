@@ -1,0 +1,21 @@
+12-03-2017
+* change this code -->  if (DateTime.Now.Hour >= Convert.ToInt32(TimeFrom) && (DateTime.Now.Hour <= Convert.ToInt32(TimeTo)))
+                             {
+
+                                 bool a = AutoFenceTimer_Insert(AccountNo, TrackID, TrackItem, FenceLength, FencePath, ShapeType, "NA", "NA", "NA", "ResponderAlertPhoneNo1", "ResponderAlertPhoneNo2", "ResponderAlertPhoneNo3", "ResponderAlertPhoneNo4", "AutoFenceTimer", "NA", "CreatedFence", "NotSend", "tarmizi_09@hotmail.my", "NA", "ResponderAlert1", "ResponderAlert2", "ResponderAlert3", "ResponderAlert4", "PreDefined", FenceAreaName, "ResponderAlertRelationShip1", "ResponderAlertRelationShip2", "ResponderAlertRelationShip3", "ResponderAlertRelationShip4", ID);
+
+                                 Count = 0;
+                             }
+
+ to this Code-->  if (DateTime.Now.Hour >= Convert.ToInt32(TimeFrom) && (DateTime.Now.Hour < Convert.ToInt32(TimeTo)))
+                             {
+
+                                 bool a = AutoFenceTimer_Insert(AccountNo, TrackID, TrackItem, FenceLength, FencePath, ShapeType, "NA", "NA", "NA", "ResponderAlertPhoneNo1", "ResponderAlertPhoneNo2", "ResponderAlertPhoneNo3", "ResponderAlertPhoneNo4", "AutoFenceTimer", "NA", "CreatedFence", "NotSend", "tarmizi_09@hotmail.my", "NA", "ResponderAlert1", "ResponderAlert2", "ResponderAlert3", "ResponderAlert4", "PreDefined", FenceAreaName, "ResponderAlertRelationShip1", "ResponderAlertRelationShip2", "ResponderAlertRelationShip3", "ResponderAlertRelationShip4", ID);
+
+                                 Count = 0;
+                             }
+
+*started using form reciverForm.
+
+* Add NotifyIcon to minimize on task tray
+

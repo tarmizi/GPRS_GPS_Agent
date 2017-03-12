@@ -599,8 +599,9 @@ namespace GPSAgent.Components.Form
                              //txtStop.Text = TimeTo;
                              //   MessageBox.Show(ID + '-' + CreatedDate + '-' + TrackItem + '-' + TrackID + '-' + AccountNo + '-' + FencePath + '-' + ShapeType + '-' + FenceAreaName + '-' + TimeFrom + '-' + TimeTo + '-' + DaySetting + '-' + Status + '-' + FenceLength);
 
-                            
-                             if (DateTime.Now.Hour >= Convert.ToInt32(TimeFrom) && (DateTime.Now.Hour <= Convert.ToInt32(TimeTo)))
+                             //6.45=consider 6
+                            //        6                                   6                6                             8
+                             if (DateTime.Now.Hour >= Convert.ToInt32(TimeFrom) && (DateTime.Now.Hour < Convert.ToInt32(TimeTo)))
                              {
 
                                  bool a = AutoFenceTimer_Insert(AccountNo, TrackID, TrackItem, FenceLength, FencePath, ShapeType, "NA", "NA", "NA", "ResponderAlertPhoneNo1", "ResponderAlertPhoneNo2", "ResponderAlertPhoneNo3", "ResponderAlertPhoneNo4", "AutoFenceTimer", "NA", "CreatedFence", "NotSend", "tarmizi_09@hotmail.my", "NA", "ResponderAlert1", "ResponderAlert2", "ResponderAlert3", "ResponderAlert4", "PreDefined", FenceAreaName, "ResponderAlertRelationShip1", "ResponderAlertRelationShip2", "ResponderAlertRelationShip3", "ResponderAlertRelationShip4", ID);
@@ -987,6 +988,98 @@ namespace GPSAgent.Components.Form
 
              }
              # endregion
+
+             private void databaseToolStripMenuItem_Click(object sender, EventArgs e)
+             {
+                 FormDB h = new FormDB();
+                 h.Show();
+             }
+
+             private void trafficToolStripMenuItem_Click(object sender, EventArgs e)
+             {
+                 this.listBoxGPSTraffic.Items.Clear();
+             }
+
+             private void clearDeviceCountToolStripMenuItem_Click(object sender, EventArgs e)
+             {
+                 listofImeiNo.Clear();
+                 toolStripStatusLabelDeviceCount.Text = "Devices Counted: 0";
+             }
+
+             private void adminLoginToolStripMenuItem_Click(object sender, EventArgs e)
+             {
+                 FormLoginAdmin la = new FormLoginAdmin();
+                 la.ShowDialog();
+             }
+
+             private void autoFenceTimerToolStripMenuItem_Click(object sender, EventArgs e)
+             {
+                 FormAutoFenceTimer ft = new FormAutoFenceTimer();
+                 ft.Show();
+             }
+
+             private void lockSystemToolStripMenuItem_Click(object sender, EventArgs e)
+             {
+                 FormLogin login = new FormLogin();
+                 login.ShowDialog();
+             }
+
+             private void subscriberAccountToolStripMenuItem_Click(object sender, EventArgs e)
+             {
+
+                 FormAccountMain frmAccountMain = new FormAccountMain();
+                 frmAccountMain.Show();
+             }
+
+             private void sMSToolStripMenuItem_Click(object sender, EventArgs e)
+             {
+                 FormSetSMSpathprogram frmSetPath = new FormSetSMSpathprogram();
+                 frmSetPath.Show();
+             }
+
+             private void launchProgramToolStripMenuItem_Click(object sender, EventArgs e)
+             {
+                 if (Properties.Settings.Default.SMSpathprogram.Length > 1)
+                 {
+                     try
+                     {
+                         Process.Start(Properties.Settings.Default.SMSpathprogram);
+                     }
+                     catch (Exception g)
+                     {
+                         MessageBox.Show(g.ToString());
+                     }
+                 }
+                 else
+                 {
+                     MessageBox.Show("Path SMS Program Not Setup..!!!");
+                 }
+             }
+
+             private void FormReceiver_FormClosing(object sender, FormClosingEventArgs e)
+             {
+                 var result = MessageBox.Show("quit application", "confirmation",
+                           MessageBoxButtons.YesNo,
+                           MessageBoxIcon.Question);
+
+                 e.Cancel = (result == DialogResult.No);
+             }
+
+             private void FormReceiver_Resize(object sender, EventArgs e)
+             {
+                 if (this.WindowState == FormWindowState.Minimized)
+                 {
+                     Hide();
+                     notifyIcon1.Visible = true;
+                 }  
+             }
+
+             private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+             {
+                 Show();
+                 this.WindowState = FormWindowState.Normal;
+                 notifyIcon1.Visible = false; 
+             }
 
 
     }

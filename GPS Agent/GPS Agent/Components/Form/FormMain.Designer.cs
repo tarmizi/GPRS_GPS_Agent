@@ -47,7 +47,6 @@
             this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trafficToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewTracfficSignalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearDeviceCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autoFenceTimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -212,6 +211,7 @@
             this.CtrlServerStartButton.TabIndex = 2;
             this.CtrlServerStartButton.Text = "Start";
             this.CtrlServerStartButton.UseVisualStyleBackColor = true;
+            this.CtrlServerStartButton.Visible = false;
             this.CtrlServerStartButton.Click += new System.EventHandler(this.CtrlServerStartButton_Click);
             // 
             // CtrlServerStatusText
@@ -264,7 +264,6 @@
             this.databaseToolStripMenuItem,
             this.commadToolStripMenuItem,
             this.trafficToolStripMenuItem,
-            this.viewTracfficSignalToolStripMenuItem,
             this.clearDeviceCountToolStripMenuItem,
             this.adminLoginToolStripMenuItem,
             this.autoFenceTimerToolStripMenuItem,
@@ -293,13 +292,6 @@
             this.trafficToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.trafficToolStripMenuItem.Text = "Clear Traffic Signal";
             this.trafficToolStripMenuItem.Click += new System.EventHandler(this.trafficToolStripMenuItem_Click);
-            // 
-            // viewTracfficSignalToolStripMenuItem
-            // 
-            this.viewTracfficSignalToolStripMenuItem.Name = "viewTracfficSignalToolStripMenuItem";
-            this.viewTracfficSignalToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.viewTracfficSignalToolStripMenuItem.Text = "View Tracffic Signal";
-            this.viewTracfficSignalToolStripMenuItem.Click += new System.EventHandler(this.viewTracfficSignalToolStripMenuItem_Click);
             // 
             // clearDeviceCountToolStripMenuItem
             // 
@@ -376,19 +368,20 @@
             this.geofencesMonitoringCenterToolStripMenuItem.Name = "geofencesMonitoringCenterToolStripMenuItem";
             this.geofencesMonitoringCenterToolStripMenuItem.Size = new System.Drawing.Size(175, 20);
             this.geofencesMonitoringCenterToolStripMenuItem.Text = "Geofences Monitoring Center";
+            this.geofencesMonitoringCenterToolStripMenuItem.Visible = false;
             this.geofencesMonitoringCenterToolStripMenuItem.Click += new System.EventHandler(this.geofencesMonitoringCenterToolStripMenuItem_Click);
             // 
             // setUrlToolStripMenuItem
             // 
             this.setUrlToolStripMenuItem.Name = "setUrlToolStripMenuItem";
-            this.setUrlToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.setUrlToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.setUrlToolStripMenuItem.Text = "Set Url";
             this.setUrlToolStripMenuItem.Click += new System.EventHandler(this.setUrlToolStripMenuItem_Click);
             // 
             // activatedToolStripMenuItem
             // 
             this.activatedToolStripMenuItem.Name = "activatedToolStripMenuItem";
-            this.activatedToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.activatedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.activatedToolStripMenuItem.Text = "Start";
             this.activatedToolStripMenuItem.Click += new System.EventHandler(this.activatedToolStripMenuItem_Click);
             // 
@@ -809,7 +802,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Virtual Fence Administrator Program";
+            this.Text = "MOSTI TRACK ADMINISTRATOR  PROGRAM";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
@@ -886,7 +879,6 @@
         private System.Windows.Forms.ToolStripMenuItem geofencesMonitoringCenterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem activatedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setUrlToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewTracfficSignalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem launchProgramToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         public System.Windows.Forms.Label labellogin;
